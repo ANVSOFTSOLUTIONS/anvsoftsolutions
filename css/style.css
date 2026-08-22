@@ -1597,6 +1597,34 @@ img, svg {
   max-width: 320px;
 }
 
+.social-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.social-icon {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border-medium);
+  border-radius: 50%;
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: lowercase;
+  transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
+}
+
+.social-icon:hover {
+  color: #05080f;
+  border-color: var(--orange-light);
+  background: var(--orange-light);
+  transform: translateY(-3px);
+}
+
 .footer-col h4 {
   font-family: var(--font-heading);
   font-size: 14px;

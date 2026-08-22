@@ -75,6 +75,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  document.querySelectorAll('[data-social-placeholder]').forEach((link) => {
+    link.addEventListener('click', (event) => event.preventDefault());
+  });
+
   // 5. Contact Form Handler with Feedback
   const contactForm = document.querySelector('#contact-form');
   if (contactForm) {
