@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 70" width="100%" height="100%" fill="none">
+  <!-- Monogram AV / AVN Mark -->
+  <g class="logo-mark">
+    <!-- Main A and V interlocking checkmark polygon -->
+    <path d="M 28 62 L 12 62 L 34 10 L 52 10 L 68 46 L 88 12 L 102 12 L 74 62 L 56 62 L 44 32 L 32 62 Z" fill="currentColor" fill-rule="evenodd"/>
+    <!-- Inner A cut / Chevron detail -->
+    <path d="M 37 42 L 52 42 L 44 23 Z" fill="var(--bg-base, #070b14)"/>
+    <!-- Overlap shadow / cutout line for 3D depth -->
+    <path d="M 44 32 L 58 62 L 72 62 L 54 24 Z" fill="currentColor" opacity="0.95"/>
+  </g>
+  
+  <!-- Text: AVN SOFT / SOLUTIONS -->
+  <g class="logo-text" fill="currentColor">
+    <text x="110" y="38" font-family="'Space Grotesk', 'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="28" letter-spacing="3">AVN SOFT</text>
+    <text x="112" y="58" font-family="'Space Grotesk', 'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="12.5" letter-spacing="5.5" opacity="0.85">SOLUTIONS</text>
+  </g>
+</svg>

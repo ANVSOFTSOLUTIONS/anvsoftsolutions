@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 60" width="100%" height="100%" fill="none">
+  <!-- Monogram AV Symbol -->
+  <g transform="translate(5, 4)">
+    <!-- Left leg of A -->
+    <path d="M 2 48 L 18 10 L 30 10 L 14 48 Z" fill="url(#blueGrad)" />
+    
+    <!-- Right leg of A / Inner cross -->
+    <path d="M 19 28 L 33 28 L 29 36 L 15 36 Z" fill="url(#blueGrad)" />
+    
+    <!-- The V checkmark stroke going down and shooting up to top-right -->
+    <path d="M 23 20 L 33 46 L 41 46 L 68 8 L 56 8 L 37 36 L 29 20 Z" fill="#3b82f6" />
+    <path d="M 12 36 L 24 54 L 38 54 L 28 36 Z" fill="#1d4ed8" />
+  </g>
+  
+  <!-- Typography -->
+  <g transform="translate(85, 0)">
+    <text x="0" y="32" font-family="'Space Grotesk', -apple-system, sans-serif" font-weight="700" font-size="25" letter-spacing="2" fill="#ffffff">AVN SOFT</text>
+    <text x="2" y="49" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-weight="600" font-size="10.5" letter-spacing="4.5" fill="#94a3b8">SOLUTIONS</text>
+  </g>
+
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60a5fa" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+  </defs>
+</svg>
