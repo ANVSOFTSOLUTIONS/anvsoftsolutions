@@ -1464,13 +1464,17 @@ img, svg {
 }
 
 .big-link {
-  display: inline-block;
+  display: block;
   font-family: var(--font-heading);
   font-size: clamp(24px, 3vw, 32px);
   font-weight: 700;
   color: var(--text-primary);
   letter-spacing: -0.02em;
   transition: color var(--transition-fast);
+}
+
+.big-link + .big-link {
+  margin-top: 10px;
 }
 
 .big-link:hover {
