@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-# Add the production sitemap URL once the public domain is finalized.
+Sitemap: https://anvsoftsolutions.com/sitemap.xml
