@@ -111,6 +111,48 @@
         </a>
       </div>
     </section>
+
+    <section class="section container upload-section">
+      <div class="section-label">04 / Apply directly</div>
+      <h2>Upload your<br><span>resume.</span></h2>
+      <p class="lead upload-intro">Looking for an internship, job, or placement opportunity? Send your resume and tell our talent team what you are looking for.</p>
+
+      <form class="upload-form" action="https://formsubmit.co/anvsoftsolutions@gmail.com" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="_subject" value="New resume submission">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <div class="upload-form-grid">
+          <div class="form-group">
+            <label for="applicant-name">Your Name</label>
+            <input id="applicant-name" name="name" type="text" required>
+          </div>
+          <div class="form-group">
+            <label for="applicant-email">Email Address</label>
+            <input id="applicant-email" name="email" type="email" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="applicant-interest">Looking for</label>
+          <select id="applicant-interest" name="interest" required>
+            <option value="" disabled selected>Select an option...</option>
+            <option value="internship">Internship</option>
+            <option value="job">Job opportunity</option>
+            <option value="placement">Placement support</option>
+            <option value="training">Training and job support</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="applicant-message">Message</label>
+          <textarea id="applicant-message" name="message" rows="4" placeholder="Tell us about your skills and preferred role..." required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="resume-file">Upload resume</label>
+          <input id="resume-file" name="attachment" type="file" accept=".pdf,.doc,.docx" required>
+          <small class="upload-help">PDF or Word document up to 10 MB.</small>
+        </div>
+        <button class="button button-primary" type="submit">Submit resume <span>↗</span></button>
+      </form>
+    </section>
   </main>
 
   <!-- Footer -->

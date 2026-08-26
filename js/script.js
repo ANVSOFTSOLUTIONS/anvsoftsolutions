@@ -97,8 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const formData = new FormData(contactForm);
             const subject = encodeURIComponent(`Website enquiry: ${formData.get('interest') || 'General enquiry'}`);
             const body = encodeURIComponent(`Name: ${formData.get('name')}\nEmail: ${formData.get('email')}\nInterest: ${formData.get('interest') || 'Not specified'}\n\nMessage:\n${formData.get('message')}`);
-            window.location.href = `mailto:info@anvsoftsolutions.com?cc=support@anvsoftsolutions.com&subject=${subject}&body=${body}`;
-            status.textContent = 'Your email app is opening with the enquiry prepared. If it does not open, email info@anvsoftsolutions.com or support@anvsoftsolutions.com directly.';
+            window.location.href = `mailto:anvsoftsolutions@gmail.com?subject=${subject}&body=${body}`;
+            status.textContent = 'Your email app is opening with the enquiry prepared. If it does not open, email anvsoftsolutions@gmail.com directly.';
             status.classList.add('success');
           }
           submitBtn.innerHTML = originalText;

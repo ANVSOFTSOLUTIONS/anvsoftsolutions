@@ -78,12 +78,13 @@
           <span class="detail-label">📞 Call Us Directly</span>
           <p>Our sales and support lines are open for immediate assistance.</p>
           <a class="big-link" href="tel:08121601057">081216 01057</a>
+          <a class="big-link" href="tel:9704101057">9704101057</a>
         </div>
 
         <div class="contact-info-card">
           <span class="detail-label">✉ Email Us</span>
           <p>For projects, partnerships, training, and general enquiries:</p>
-          <a class="email-link" href="mailto:info@anvsoftsolutions.com">info@anvsoftsolutions.com</a>
+          <a class="email-link" href="mailto:anvsoftsolutions@gmail.com">anvsoftsolutions@gmail.com</a>
           <p class="support-email"><span>Technical support:</span> <a href="mailto:support@anvsoftsolutions.com">support@anvsoftsolutions.com</a></p>
         </div>
 
@@ -125,6 +126,38 @@
         </form>
       </div>
 
+    </section>
+
+    <section class="section container upload-section">
+      <div class="section-label">03 / Share a document</div>
+      <h2>Send us the<br><span>right details.</span></h2>
+      <p class="lead upload-intro">Clients can upload a requirement document here. For general questions, use the enquiry form above.</p>
+
+      <form class="upload-form" action="https://formsubmit.co/anvsoftsolutions@gmail.com" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="_subject" value="New client requirement document">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <div class="upload-form-grid">
+          <div class="form-group">
+            <label for="requirement-name">Your Name</label>
+            <input id="requirement-name" name="name" type="text" required>
+          </div>
+          <div class="form-group">
+            <label for="requirement-email">Email Address</label>
+            <input id="requirement-email" name="email" type="email" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="requirement-message">Requirement or question</label>
+          <textarea id="requirement-message" name="message" rows="4" placeholder="Tell us what you need..." required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="requirement-file">Upload requirement document</label>
+          <input id="requirement-file" name="attachment" type="file" accept=".pdf,.doc,.docx,.txt,.xls,.xlsx,.ppt,.pptx" required>
+          <small class="upload-help">PDF, Word, Excel, PowerPoint, or text files up to 10 MB.</small>
+        </div>
+        <button class="button button-primary" type="submit">Send document <span>↗</span></button>
+      </form>
     </section>
   </main>
 
