@@ -1573,6 +1573,13 @@ img, svg {
   color: #34d399;
 }
 
+.form-status.error {
+  display: block;
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #f87171;
+}
+
 .upload-section {
   border-top: 1px solid var(--border-subtle);
   padding-top: 80px;

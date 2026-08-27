@@ -92,19 +92,33 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.innerHTML = 'Sending... <span>⏳</span>';
         submitBtn.disabled = true;
 
-        setTimeout(() => {
-          if (status) {
-            const formData = new FormData(contactForm);
-            const subject = encodeURIComponent(`Website enquiry: ${formData.get('interest') || 'General enquiry'}`);
-            const body = encodeURIComponent(`Name: ${formData.get('name')}\nEmail: ${formData.get('email')}\nInterest: ${formData.get('interest') || 'Not specified'}\n\nMessage:\n${formData.get('message')}`);
-            window.location.href = `mailto:anvsoftsolutions@gmail.com?subject=${subject}&body=${body}`;
-            status.textContent = 'Your email app is opening with the enquiry prepared. If it does not open, email anvsoftsolutions@gmail.com directly.';
-            status.classList.add('success');
-          }
-          submitBtn.innerHTML = originalText;
-          submitBtn.disabled = false;
-          contactForm.reset();
-        }, 800);
+        const formData = new FormData(contactForm);
+
+        fetch(contactForm.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        })
+          .then((response) => {
+            if (!response.ok) throw new Error('Request failed');
+            if (status) {
+              status.textContent = 'Thanks! Your enquiry has been sent. We will get back to you shortly.';
+              status.classList.remove('error');
+              status.classList.add('success');
+            }
+            contactForm.reset();
+          })
+          .catch(() => {
+            if (status) {
+              status.textContent = 'Something went wrong sending your enquiry. Please email anvsoftsolutions@gmail.com directly.';
+              status.classList.remove('success');
+              status.classList.add('error');
+            }
+          })
+          .finally(() => {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+          });
       }
     });
   }
