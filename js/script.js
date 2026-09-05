@@ -79,8 +79,11 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', (event) => event.preventDefault());
   });
 
-  // 5. Form Handler with Feedback (contact / product / construction / upload forms)
-  const ajaxForms = document.querySelectorAll('form.contact-form, form.upload-form');
+  // 5. Form Handler with Feedback (contact / product / construction forms)
+  // Upload forms (file attachments) are excluded: FormSubmit's /ajax/ endpoint
+  // does not reliably deliver file attachments, so those submit as plain
+  // multipart POSTs and redirect via their own _next field instead.
+  const ajaxForms = document.querySelectorAll('form.contact-form');
   ajaxForms.forEach((form) => {
     let status = form.querySelector('.form-status');
     if (!status) {
