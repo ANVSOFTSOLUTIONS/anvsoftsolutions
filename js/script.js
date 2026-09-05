@@ -79,47 +79,49 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', (event) => event.preventDefault());
   });
 
-  // 5. Contact Form Handler with Feedback
-  const contactForm = document.querySelector('#contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (event) => {
+  // 5. Form Handler with Feedback (contact / product / construction / upload forms)
+  const ajaxForms = document.querySelectorAll('form.contact-form, form.upload-form');
+  ajaxForms.forEach((form) => {
+    let status = form.querySelector('.form-status');
+    if (!status) {
+      status = document.createElement('div');
+      status.className = 'form-status';
+      status.setAttribute('role', 'status');
+      form.appendChild(status);
+    }
+
+    form.addEventListener('submit', (event) => {
       event.preventDefault();
-      const status = contactForm.querySelector('.form-status');
-      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const submitBtn = form.querySelector('button[type="submit"]');
+      if (!submitBtn) return;
 
-      if (submitBtn) {
-        const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = 'Sending... <span>⏳</span>';
-        submitBtn.disabled = true;
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = 'Sending... <span>⏳</span>';
+      submitBtn.disabled = true;
+      status.classList.remove('error', 'success');
+      status.textContent = '';
 
-        const formData = new FormData(contactForm);
+      const formData = new FormData(form);
 
-        fetch(contactForm.action, {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+        .then((response) => {
+          if (!response.ok) throw new Error('Request failed');
+          status.textContent = 'Thanks! Your enquiry has been sent. We will get back to you shortly.';
+          status.classList.add('success');
+          form.reset();
         })
-          .then((response) => {
-            if (!response.ok) throw new Error('Request failed');
-            if (status) {
-              status.textContent = 'Thanks! Your enquiry has been sent. We will get back to you shortly.';
-              status.classList.remove('error');
-              status.classList.add('success');
-            }
-            contactForm.reset();
-          })
-          .catch(() => {
-            if (status) {
-              status.textContent = 'Something went wrong sending your enquiry. Please email anvsoftsolutions@gmail.com directly.';
-              status.classList.remove('success');
-              status.classList.add('error');
-            }
-          })
-          .finally(() => {
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-          });
-      }
+        .catch(() => {
+          status.textContent = 'Something went wrong sending your enquiry. Please email anvsoftsolutions@gmail.com directly.';
+          status.classList.add('error');
+        })
+        .finally(() => {
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+        });
     });
-  }
+  });
 });
